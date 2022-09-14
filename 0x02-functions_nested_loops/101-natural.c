@@ -1,16 +1,14 @@
-#include <unistd.h>
 #include <stdio.h>
-#include "main.h"
 
 /**
- * print_natural_sum- Entry point
+ * main- Entry point
  *
  * Description: Print the sum of all natural numbers
  * within range 0 - 1024 that are multiples of 3 or 5
  *
- * Return: void
+ * Return: Always 0 (success)
  */
-void print_natural_sum(void)
+int main(void)
 {
 	int i, sum;
 
@@ -23,4 +21,5 @@ void print_natural_sum(void)
 		}
 	}
 	printf("%d\n", sum);
+	return (0);
 }
