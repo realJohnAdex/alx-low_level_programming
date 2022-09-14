@@ -2,7 +2,7 @@
 #include "main.h"
 
 /**
- * times_table- Entry point
+ * print_times_table- Entry point
  * @n: integer input
  *
  * Description: Print n times table, doesnt print
@@ -14,7 +14,7 @@ void print_times_table(int n)
 {
 	int i, j, times;
 
-	while (n > 0 && n < 15)
+	while (n >= 0 && n < 15)
 	{
 		for (i = 0; i <= n; i++)
 		{
