@@ -44,6 +44,6 @@ int main(void)
 	}
 	last = (a_new + b_new) + carry;
 	last_rem = (a_mod + b_mod) - carry * 1000;
-	printf("%lu%lu\n", last, last_rem);
+	printf("%lu0%lu\n", last, last_rem);
 	return (0);
 }
