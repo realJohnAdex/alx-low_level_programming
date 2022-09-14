@@ -10,19 +10,19 @@
 int main(void)
 {
 	int i;
-	long int a, b, next, last;
+	unsigned long int a, b, next, last;
 
 	a = 1;
 	b = 2;
-	printf("%ld, %ld, ", a, b);
+	printf("%lu, %lu, ", a, b);
 	for (i = 0; i < 95; i++)
 	{
 		next = a + b;
-		printf("%ld, ", next);
+		printf("%lu, ", next);
 		a = b;
 		b = next;
 	}
 	last = a + b;
-	printf("%ld\n", last);
+	printf("%lu\n", last);
 	return (0);
 }
