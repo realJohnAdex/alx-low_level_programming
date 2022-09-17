@@ -36,8 +36,9 @@ bool isPrime(int x)
 
 int main(void)
 {
-	int i;
-	long int num, prime_factor;
+	unsigned int i;
+	unsigned long int prime_factor;
+	unsigned long int num;
 
 	num = 612852475143;
 	prime_factor = 0;
@@ -46,6 +47,6 @@ int main(void)
 		if (num % i == 0 && isPrime(i))
 			prime_factor = i;
 	}
-	printf("%ld\n", prime_factor);
+	printf("%lu\n", prime_factor);
 	return (0);
 }
