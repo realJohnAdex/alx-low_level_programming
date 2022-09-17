@@ -42,7 +42,7 @@ int main(void)
 	num = 612852475143;
 	prime_factor = 0;
 	largest_prime_factor = 0;
-	for (i = 2; i <= num / 2; i++)
+	for (i = 3; i <= num / 2; i += 2)
 	{
 		if (num % i == 0 && isPrime(i))
 			prime_factor = i;
