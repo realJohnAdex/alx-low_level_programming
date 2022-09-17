@@ -37,17 +37,15 @@ bool isPrime(int x)
 int main(void)
 {
 	int i;
-	long int num, prime_factor, largest_prime_factor;
+	long int num, prime_factor;
 
 	num = 612852475143;
 	prime_factor = 0;
-	largest_prime_factor = 0;
 	for (i = 3; i <= num / 2; i += 2)
 	{
 		if (num % i == 0 && isPrime(i))
 			prime_factor = i;
 	}
-	largest_prime_factor = prime_factor;
-	printf("%ld\n", largest_prime_factor);
+	printf("%ld\n", prime_factor);
 	return (0);
 }
