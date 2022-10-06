@@ -20,7 +20,7 @@ int main(int argc, char **argv)
 		{
 			if (atoi(argv[i]) == 0)
 			{
-				falsesum ++;
+				falsesum++;
 			} else if (atoi(argv[i]) > 0)
 			{
 				sum += atoi(argv[i]);
