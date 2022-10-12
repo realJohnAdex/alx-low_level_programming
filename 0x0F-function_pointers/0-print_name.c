@@ -5,9 +5,10 @@
  * @name: name of the person
  * @f: pointer to function
  *
- * Description: Funtion pointers
+ * Return: Always 0 (success)
  */
 void print_name(char *name, void (*f)(char *))
 {
-	(*f)(name);
+	if (f && name)
+		(*f)(name);
 }
