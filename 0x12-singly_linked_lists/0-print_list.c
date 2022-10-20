@@ -10,20 +10,21 @@
 size_t print_list(const list_t *h)
 {
 	size_t n;
-	const list_t *l_list = h;
 
 	n = 0;
-	while (l_list != NULL)
+	if (h == NULL)
+		return (0);
+	while (h != NULL)
 	{
-		if (l_list->str == NULL)
+		if (h->str == NULL)
 		{
 			printf("[0] (nil)\n");
 		} else
 		{
-			printf("[%u] %s\n", l_list->len, l_list->str);
+			printf("[%u] %s\n", h->len, h->str);
 		}
 		n++;
-		l_list = l_list->next;
+		h = h->next;
 	}
 	return (n);
 }
