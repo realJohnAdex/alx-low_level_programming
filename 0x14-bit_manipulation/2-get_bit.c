@@ -9,7 +9,8 @@
  */
 int get_bit(unsigned long int n, unsigned int index)
 {
-	int lenght, ret_val;
+	int ret_val;
+	unsigned int lenght;
 	unsigned long int mask, temp;
 
 	lenght = 0;
@@ -25,6 +26,10 @@ int get_bit(unsigned long int n, unsigned int index)
 	if (lenght > 0)
 	{
 		mask <<= lenght;
+	}
+	if (index > lenght)
+	{
+		return (ret_val);
 	}
 	if (mask >>= (lenght - index))
 	{
