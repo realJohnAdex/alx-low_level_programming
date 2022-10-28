@@ -17,6 +17,10 @@ int set_bit(unsigned long int *n, unsigned int index)
 	mask = 1;
 	ret_val = -1;
 	temp = *n;
+	if (!n)
+	{
+		return (-1);
+	}
 	while (temp > 0)
 	{
 		lenght++;
