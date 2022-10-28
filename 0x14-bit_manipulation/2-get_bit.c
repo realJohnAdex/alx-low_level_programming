@@ -32,7 +32,7 @@ int get_bit(unsigned long int n, unsigned int index)
 	}
 	if (index > lenght)
 	{
-		return (ret_val);
+		return (-1);
 	}
 	if (mask >>= (lenght - index))
 	{
