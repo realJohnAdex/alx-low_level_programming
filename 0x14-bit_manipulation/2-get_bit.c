@@ -5,7 +5,7 @@
  * @n: unsigned long int
  * @index: unsigned int
  *
- * Return: integer 0 or 1
+ * Return: integer 0 or 1 or -1
  */
 int get_bit(unsigned long int n, unsigned int index)
 {
@@ -26,6 +26,9 @@ int get_bit(unsigned long int n, unsigned int index)
 	if (lenght > 0)
 	{
 		mask <<= lenght;
+	} else
+	{
+		return (-1);
 	}
 	if (index > lenght)
 	{
