@@ -20,7 +20,7 @@ int create_file(const char *filename, char *text_content)
 	int fd, text_len;
 	ssize_t w_check;
 
-	if (!filename)
+	if (!filename || text_content)
 		return (-1);
 	/* write */
 	fd = open(filename, O_CREAT | O_WRONLY | O_TRUNC | O_EXCL, 0600);
@@ -28,15 +28,13 @@ int create_file(const char *filename, char *text_content)
 	if (fd == -1)
 		return (-1);
 
-
-	text_len = strlen(text_content);
-	if (text_content != NULL)
-	{
-		w_check = write(fd, text_content, text_len);
-	} else
+	if (text_content == NULL)
 	{
 		return (1);
 	}
+	text_len = strlen(text_content);
+	w_check = write(fd, text_content, text_len);
+
 	if (w_check == -1)
 		return (-1);
 
