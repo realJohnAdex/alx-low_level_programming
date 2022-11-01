@@ -30,13 +30,17 @@ int create_file(const char *filename, char *text_content)
 
 	if (text_content == NULL)
 	{
+		close(fd);
 		return (1);
 	}
 	text_len = strlen(text_content);
 	w_check = write(fd, text_content, text_len);
 
 	if (w_check == -1)
+	{
+		close(fd);
 		return (-1);
+	}
 
 	close(fd);
 
