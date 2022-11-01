@@ -33,6 +33,9 @@ int create_file(const char *filename, char *text_content)
 	if (text_content != NULL)
 	{
 		w_check = write(fd, text_content, text_len);
+	} else
+	{
+		return (1);
 	}
 	if (w_check == -1)
 		return (-1);
