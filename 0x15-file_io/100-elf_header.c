@@ -9,9 +9,9 @@
  */
 void is_file_elf(unsigned char *e_ident)
 {
-	if (e_ident[0] != 127 ||
-		e_ident[1] != 'E' ||
-		e_ident[2] != 'L' ||
+	if (e_ident[0] != 127 &&
+		e_ident[1] != 'E' &&
+		e_ident[2] != 'L' &&
 		e_ident[3] != 'F')
 	{
 		dprintf(STDERR_FILENO, "Error: Not an ELF file\n");
