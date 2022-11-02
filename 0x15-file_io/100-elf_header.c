@@ -29,7 +29,7 @@ void print_magic(unsigned char *e_ident)
 {
 	int index = 0;
 
-	printf("\tMagic:\t");
+	printf("  Magic:                             ");
 
 	while (index < EI_NIDENT)
 	{
@@ -51,7 +51,7 @@ void print_magic(unsigned char *e_ident)
  */
 void print_class(unsigned char *e_ident)
 {
-	printf("\tClass:\t\t");
+	printf("  Class:                             ");
 
 	switch (e_ident[EI_CLASS])
 	{
@@ -78,7 +78,7 @@ void print_class(unsigned char *e_ident)
  */
 void print_data(unsigned char *e_ident)
 {
-	printf("\tData:\t\t");
+	printf("  Data:                              ");
 
 	switch (e_ident[EI_DATA]) /*EI_DATA - Data encoding*/
 	{
@@ -104,7 +104,7 @@ void print_data(unsigned char *e_ident)
  */
 void print_version(unsigned char *e_ident)
 {
-	printf("\tVersion:\t\t");
+	printf("  Version:                           ");
 
 	if (e_ident[EI_VERSION] == EV_CURRENT)
 		printf("%d (current)\n", e_ident[EI_VERSION]);
@@ -120,7 +120,7 @@ void print_version(unsigned char *e_ident)
  */
 void print_osabi(unsigned char *e_ident)
 {
-	printf("\tOS/ABI:\t\t");
+	printf("  OS/ABI:                            ");
 
 	switch (e_ident[EI_OSABI])
 	{
@@ -170,7 +170,7 @@ void print_osabi(unsigned char *e_ident)
  */
 void print_abi(unsigned char *e_ident)
 {
-	printf("\tABI Version:\t\t");
+	printf("  ABI Version:                       ");
 	printf("%d\n", e_ident[EI_ABIVERSION]);
 }
 
@@ -186,7 +186,7 @@ void print_type(unsigned int e_type, unsigned char *e_ident)
 	if (e_ident[EI_DATA] == ELFDATA2MSB)
 		e_type >>= 8;
 
-	printf("\tType:\t\t");
+	printf("  Type:                              ");
 
 	switch (e_type)
 	{
@@ -220,7 +220,7 @@ void print_type(unsigned int e_type, unsigned char *e_ident)
  */
 void print_entry(unsigned long int e_entry, unsigned char *e_ident)
 {
-	printf("\tEntry point address:\t\t");
+	printf("  Entry point address:               ");
 
 	if (e_ident[EI_DATA] == ELFDATA2MSB)
 	{
@@ -263,11 +263,6 @@ int main(int __attribute__((__unused__)) ac, char **av)
 	Elf64_Ehdr *elf;
 	int elf_file, read_elf;
 
-	if (av[1] == NULL)
-	{
-		dprintf(STDERR_FILENO, "Usage: elf_header elf_filename\n");
-		exit(98);
-	}
 	elf_file = open(av[1], O_RDONLY);
 	if (elf_file == -1)
 	{
@@ -277,8 +272,8 @@ int main(int __attribute__((__unused__)) ac, char **av)
 	elf = malloc(sizeof(Elf64_Ehdr));
 	if (elf == NULL)
 	{
-		free(elf);
 		close_file(elf_file);
+		free(elf);
 		dprintf(STDERR_FILENO, "Error: Can't allocate memory for %s\n", av[1]);
 		exit(98);
 	}
