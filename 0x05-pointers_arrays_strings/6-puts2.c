@@ -1,5 +1,3 @@
-#include <unistd.h>
-#include <string.h>
 #include "main.h"
 
 /**
@@ -10,10 +8,12 @@
  */
 void puts2(char *str)
 {
-	while (*str != '\0')
+	int i;
+
+	for (i = 0; str[i] != '\0'; ++i)
 	{
-		printf("%c", (*str + 0));
-		str += 2;
+		if (i % 2 == 0)
+			_putchar(str[i]);
 	}
-	printf("\n");
+	_putchar('\n');
 }
