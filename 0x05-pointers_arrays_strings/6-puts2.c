@@ -10,13 +10,10 @@
  */
 void puts2(char *str)
 {
-	char *buf;
-
-	buf = str;
-	while (*buf != '\0')
+	while (*str != '\0')
 	{
-		printf("%c", (*buf + 0));
-		buf += 2;
+		printf("%c", (*str + 0));
+		str += 2;
 	}
 	printf("\n");
 }
