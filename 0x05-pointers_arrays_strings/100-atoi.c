@@ -9,13 +9,15 @@
 int _atoi(char *s)
 {
 	unsigned int num;
-	int sign;
+	int sign, i;
 
 	sign = 1;
 	num = 0;
+	i = 0;
 
 	do {
-		if (*s == '-')
+		i++;
+		if (*s == '-' && (s[i] >= '0' && s[i] <= '9'))
 			sign = -1;
 		else if (*s >= '0' && *s <= '9')
 			num = (num * 10) + (*s - '0');
