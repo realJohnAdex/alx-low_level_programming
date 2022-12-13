@@ -1,3 +1,5 @@
+#include "main.h"
+
 /**
 * _isupper - checks for uppercase character
 * @c: character to be checked
@@ -67,7 +69,7 @@ char *_strcat(char *dest, char *src)
 	}
 
 	dest[i] = '\0';
-	return (dest)
+	return (dest);
 }
 
 /**
