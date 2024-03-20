@@ -3,7 +3,7 @@
 
 .PHONY = all
 
-CC = gcc
+CC := gcc
 SRC := $(wildcard *.c)
 
 all:
