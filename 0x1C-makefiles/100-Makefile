@@ -1,0 +1,23 @@
+# Usage:
+# make -f 100-Makefile       # compile all binary
+
+.PHONY = all clean oclean fclean re
+
+CC = gcc
+SRC = main.c school.c
+OBJ = $(SRC:.c=.o)
+NAME = school
+CFLAGS = -Wall -Werror -Wextra -pedantic
+
+all: ${OBJ}
+	${CC} ${OBJ} -o ${NAME}
+
+clean:
+	${RM} *~ *.swp ${NAME}
+
+oclean:
+	${RM} ${OBJ}
+
+fclean: clean oclean
+
+re: fclean all
